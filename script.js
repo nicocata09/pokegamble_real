@@ -1,6 +1,6 @@
-const sobre = document.getElementById("sobre");
-const divCartas = document.getElementById("divCartas");
-
+let sobre = document.getElementById("sobre");
+let divCartas = document.getElementById("divCartas");
+let abrir = document.getElementById("abrir");
 let cartas = [
     {
         nombre: "Bulbasur ",
@@ -22,13 +22,14 @@ let cartas = [
     }    
 ]
 
-console.log(cartas[1].precio)
-
 function abrirSobre() {
     // implementar que elija una carta aleatoria del array y la muestre en pantalla
-    let random = math.floor(math.random()*2);
-    divCartas.innerHTML = cartas[random].precio;
-    
+    let random = Math.floor(Math.random()*2);
+
+    document.getElementById("divCartas").innerHTML = `
+    <h1> ${cartas[random].nombre} </h1>
+    <p> ${cartas[random].precio} </p>
+    `;
 }
 
 sobre.addEventListener("click", abrirSobre)
