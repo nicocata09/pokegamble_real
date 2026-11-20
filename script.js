@@ -99,7 +99,7 @@ function abrirSobre() {
 
     document.getElementById("divCartas").innerHTML = `
     <img src="${cartas[random].img}" class="carta">
-    <p> ${cartas[random].precio} </p>
+    <p> $${cartas[random].precio} </p>
     <p> ${cartas[random].rareza} </p>
     `;
 }
