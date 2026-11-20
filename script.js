@@ -1,6 +1,10 @@
 let sobre = document.getElementById("sobre");
 let divCartas = document.getElementById("divCartas");
-let abrir = document.getElementById("abrir");
+let guardarbutton = document.getElementById("guardar");
+let GuardoCarta;
+let random;
+let precioSobre = 7;
+let balanceuser;
 let cartas = [
     {
         nombre: "Bulbasur ",
@@ -95,13 +99,35 @@ let cartas = [
 
 function abrirSobre() {
     // implementar que elija una carta aleatoria del array y la muestre en pantalla
-    let random = Math.floor(Math.random() * (cartas.length - 1));
+        for (let i=0; i<=7; i++){
+    
+            document.getElementById("contadorSobres").innerHTML = "Todavia te quedan sobres gratis";
+    }
+    if (i > 7){
+        sobre = 7;
+    }
 
-    document.getElementById("divCartas").innerHTML = `
-    <img src="${cartas[random].img}" class="carta">
+    random = Math.floor(Math.random() * (cartas.length - 1));
+
+    document.getElementById("cartarandom").innerHTML = `
+    <img src="${cartas[random].img}" class="cartarand" >
+    <p> $${cartas[random].precio} </p>
+    <p> ${cartas[random].rareza} </p>
+    `;
+    balanceuser = balanceuser + cartas[random].precio;
+}
+
+sobre.addEventListener("click", abrirSobre);
+
+function guardarCarta() {
+    document.getElementById("CartaGuardada").innerHTML = `
+    <img src="${cartas[random].img}" class="cartaguar">
     <p> $${cartas[random].precio} </p>
     <p> ${cartas[random].rareza} </p>
     `;
 }
 
-sobre.addEventListener("click", abrirSobre)
+guardarbutton.addEventListener("click", guardarCarta);
+
+
+

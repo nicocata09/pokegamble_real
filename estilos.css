@@ -6,10 +6,44 @@ background-attachment: fixed;
 #Sobresini
 {
 background-color: white;
-margin: 5%
+margin: 5%;
+
 }
 
-.carta{
-    width: 20%;
+#sobre{
+width: 100%;
+height: auto;
 }
 
+#divCartas{
+display: flex;
+flex-direction: row;
+margin:2%;
+}
+
+#cartarandom{
+    width: 30%;
+}
+
+#guardar{
+    width: 35%;
+
+}
+
+#CartaGuardada{
+    width: 30%;
+}
+
+
+
+.cartarand{
+    width: 90%;
+}
+
+.cartaguar{
+    width: 100%;
+}
+
+.botonguardar{
+    width: 50%;
+}
